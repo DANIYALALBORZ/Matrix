@@ -18,6 +18,10 @@
     @apply hover:text-white hover:drop-shadow-xl hover:shadow-zinc-400 hover:transition-none;
 }
 
+.matrix-main {
+    @apply z-50 absolute w-full h-full bg-black/30 backdrop-blur-sm pointer-events-none flex justify-center items-center;
+}
+
 @layer utilities {
     .matrix-dir-rtl {
         direction: rtl;
