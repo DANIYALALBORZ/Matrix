@@ -1,0 +1,12 @@
+{
+  "name": "matrix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "npx tailwindcss -i ./assets/css/matrix/matrix-input.css -o ./assets/css/matrix/matrix.css --watch"
+  },
+  "author": "Danial Alborz",
+  "license": "ISC"
+}
