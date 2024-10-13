@@ -554,7 +554,87 @@ video {
   display: none;
 }
 
-.bg-slate-700 {
+.matrix-bg-section {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
   --tw-bg-opacity: 1;
-  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
+  background-color: rgb(163 230 53 / var(--tw-bg-opacity));
+  line-height: 0;
+}
+
+.matrix-bg-row {
+  position: relative;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 3rem;
+}
+
+.matrix-bg-row > * {
+  cursor: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  --tw-text-opacity: 1;
+  color: rgb(9 9 11 / var(--tw-text-opacity));
+  opacity: 0.5;
+}
+
+.matrix-bg-col {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.matrix-bg-col > * {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 1000ms;
+}
+
+.matrix-bg-icon:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  --tw-shadow-color: #a1a1aa;
+  --tw-shadow: var(--tw-shadow-colored);
+  --tw-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  transition-property: none;
+}
+
+.matrix-bg-section .matrix-bg-row:nth-child(even) {
+  direction: rtl;
+}
+
+@keyframes move-icon-row-odd {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.matrix-bg-section .matrix-bg-row:nth-child(odd) {
+  animation: move-icon-row-odd 80s linear infinite alternate;
+}
+
+@keyframes move-icon-row-even {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.matrix-bg-section .matrix-bg-row:nth-child(even) {
+  animation: move-icon-row-even 80s linear infinite alternate;
 }

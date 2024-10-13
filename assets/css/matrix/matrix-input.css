@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.matrix-bg-section {
+    @apply relative w-full h-screen bg-lime-400 flex flex-col overflow-hidden leading-[0];
+}
+
+.matrix-bg-row {
+    @apply relative w-full flex whitespace-nowrap text-[3rem] *:text-zinc-950 *:opacity-50 *:select-none *:cursor-auto my-1;
+}
+
+.matrix-bg-col {
+    @apply *:transition-all *:duration-1000 mx-2;
+}
+
+.matrix-bg-icon {
+    @apply hover:text-white hover:drop-shadow-xl hover:shadow-zinc-400 hover:transition-none;
+}
+
+@layer utilities {
+    .matrix-dir-rtl {
+        direction: rtl;
+    }
+}
+
+.matrix-bg-section .matrix-bg-row:nth-child(even) {
+    @apply matrix-dir-rtl;
+}
+
+
+.matrix-bg-section .matrix-bg-row:nth-child(odd) {
+    @apply animate-move-icon-row-odd;
+}
+
+.matrix-bg-section .matrix-bg-row:nth-child(even) {
+    @apply animate-move-icon-row-even;
+}
